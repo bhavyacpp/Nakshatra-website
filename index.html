@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakshatra Realtors | Luxury Real Estate</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            800: '#292524',
+                            900: '#1c1917',
+                        },
+                        brand: {
+                            red: '#dc2626',
+                            orange: '#f97316'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-brand': 'linear-gradient(to right, #dc2626, #f97316)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #fafaf9; /* Warm Ivory/Stone Background */
+            color: #292524;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(to right, #dc2626, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(5, 196, 234, 0.831);
+            border-color: #e7e5e4;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(250,250,249,0.3) 0%, rgba(250,250,249,1) 100%);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-stone-50/90 backdrop-blur-md border-b border-stone-200" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="logo.jpeg" alt="Nakshatra Realtors Logo" class="h-[72px] w-auto object-contain mix-blend-multiply">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-stone-800 hover:text-brand-red transition-colors text-sm font-medium uppercase tracking-wider">Home</a>
+                    <a href="#properties" class="text-stone-800 hover:text-brand-red transition-colors text-sm font-medium uppercase tracking-wider">Properties</a>
+                    <a href="#About Us" class="text-stone-800 hover:text-brand-red transition-colors text-sm font-medium uppercase tracking-wider">About Us</a>
+                    <a href="#services" class="text-stone-800 hover:text-brand-red transition-colors text-sm font-medium uppercase tracking-wider">Services</a>
+                    <a href="https://wa.me/919867797833" target="_blank" class="bg-gradient-brand text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-lg shadow-brand-red/20">
+                        <i class="fab fa-whatsapp mr-2"></i> Let's Talk
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-stone-800 hover:text-brand-red focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-50 border-b border-stone-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-stone-800 hover:text-brand-red hover:bg-stone-100 rounded-md">Home</a>
+                <a href="#properties" class="block px-3 py-2 text-base font-medium text-stone-800 hover:text-brand-red hover:bg-stone-100 rounded-md">Properties</a>
+                <a href="#About Us" class="block px-3 py-2 text-base font-medium text-stone-800 hover:text-brand-red hover:bg-stone-100 rounded-md">About Us</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-stone-800 hover:text-brand-red hover:bg-stone-100 rounded-md">Services</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Luxury Real Estate" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <h2 class="text-sm font-bold tracking-[0.2em] text-stone-800 uppercase mb-4 opacity-0 translate-y-8 animate-fade-in-up" style="animation: fadeInUp 1s ease-out forwards;">Curated Luxury Estates &middot; India</h2>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-stone-900 leading-tight mb-6 opacity-0 translate-y-8" style="animation: fadeInUp 1s ease-out 0.2s forwards;">
+                Find Your <span class="text-gradient font-sans">Dream</span><br/>Property
+            </h1>
+            <p class="text-lg md:text-xl text-stone-600 mb-10 max-w-2xl mx-auto opacity-0 translate-y-8" style="animation: fadeInUp 1s ease-out 0.4s forwards;">
+                Luxury apartments, villas & commercial spaces — curated with the discretion for the most discerning buyers.
+            </p>
+            <div class="opacity-0 translate-y-8 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6" style="animation: fadeInUp 1s ease-out 0.6s forwards;">
+                <a href="#properties" class="bg-stone-900 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-stone-800 transition-all border border-stone-700 w-full sm:w-auto">
+                    Explore Properties
+                </a>
+                <a href="#contact" class="bg-gradient-brand text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all shadow-lg w-full sm:w-auto">
+                    Book Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties Section (New Card Design) -->
+    <section id="properties" class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-[0.15em] text-stone-500 uppercase mb-4">Featured Residences</h2>
+                <h3 class="text-4xl md:text-5xl font-serif font-bold text-stone-900">Hand-picked homes for<br><span class="text-gradient font-sans italic">discerning collectors</span></h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Property Card: Regency Estate -->
+<div class="bg-white rounded-[2rem] overflow-hidden border border-stone-200 hover-card shadow-sm">
+    <div class="relative h-72">
+        <!-- Property Photo -->
+        <img src="5bhk.jpeg" class="w-full h-full object-cover">
+        <div class="absolute top-4 left-4 bg-brand-orange/90 backdrop-blur text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Featured</div>
+        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-900 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Residencies</div>
+    </div>
+    <div class="p-8">
+        <div class="flex justify-between items-start mb-2">
+            <h4 class="text-2xl font-serif font-bold text-stone-900">Regency Estate</h4>
+            <div class="text-right ml-4">
+                <span class="text-[10px] text-stone-400 uppercase tracking-widest block mb-1">From</span>
+                <div class="text-lg font-bold text-brand-orange whitespace-nowrap">₹ 3.0 Cr</div>
+            </div>
+        </div>
+        <div class="text-stone-500 text-sm mb-6 flex items-center">
+            <i class="fas fa-map-marker-alt mr-2 text-stone-400"></i> Kalyan - Dombivli
+        </div>
+        <div class="flex justify-between items-center py-4 border-y border-stone-100 mb-6 text-stone-600 text-sm">
+            <span class="flex items-center"><i class="fas fa-bed mr-2 text-stone-400"></i> 5 BHK</span>
+            <span class="flex items-center"><i class="fas fa-expand mr-2 text-stone-400"></i> 2,400 sq ft</span>
+        </div>
+        <a href="https://wa.me/919867797833?text=I'm%20interested%20in%20Regency%20Estate%20(Kalyan-Dombivli)" target="_blank" class="flex justify-between items-center text-stone-900 font-bold uppercase text-xs tracking-widest hover:text-brand-red transition-colors group">
+            Inquire via WhatsApp 
+            <span class="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 flex items-center justify-center group-hover:bg-brand-red group-hover:text-white group-hover:border-brand-red transition-all">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+            </span>
+        </a>
+    </div>
+</div>
+
+                <!-- Property Card 2 -->
+                <div class="bg-white rounded-[2rem] overflow-hidden border border-stone-200 hover-card shadow-sm">
+                    <div class="relative h-72">
+                        <img src="2bhk1.jpeg" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-brand-orange/90 backdrop-blur text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Featured</div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-900 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Residencies</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-2xl font-serif font-bold text-stone-900">Nr. Icon Hospital</h4>
+                            <div class="text-right ml-4">
+                                <span class="text-[10px] text-stone-400 uppercase tracking-widest block mb-1">From</span>
+                                <div class="text-lg font-bold text-brand-orange whitespace-nowrap">₹ 75 Lacs</div>
+                            </div>
+                        </div>
+                        <div class="text-stone-500 text-sm mb-6 flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-stone-400"></i> Dombivli
+                        </div>
+                        <div class="flex justify-between items-center py-4 border-y border-stone-100 mb-6 text-stone-600 text-sm">
+                            <span class="flex items-center"><i class="fas fa-bed mr-2 text-stone-400"></i> 2 BHK</span>
+                            <span class="flex items-center"><i class="fas fa-expand mr-2 text-stone-400"></i> 800 sq ft</span>
+                        </div>
+                        <a href="https://wa.me/919867797833" target="_blank" class="flex justify-between items-center text-stone-900 font-bold uppercase text-xs tracking-widest hover:text-brand-red transition-colors group">
+                            Inquire via WhatsApp 
+                            <span class="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 flex items-center justify-center group-hover:bg-brand-red group-hover:text-white group-hover:border-brand-red transition-all">
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="bg-white rounded-[2rem] overflow-hidden border border-stone-200 hover-card shadow-sm">
+                    <div class="relative h-72">
+                        <img src="1bhk.jpeg" alt="Commercial" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-brand-orange/80 backdrop-blur text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Featured</div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-900 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Residencies</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-2xl font-serif font-bold text-stone-900">Nr. Sangeeta Wadi </h4>
+                            <div class="text-right ml-4">
+                                <span class="text-[10px] text-stone-400 uppercase tracking-widest block mb-1">From</span>
+                                <div class="text-lg font-bold text-brand-orange whitespace-nowrap">₹ 55 Lacs</div>
+                            </div>
+                        </div>
+                        <div class="text-stone-500 text-sm mb-6 flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-stone-400"></i> Dombivli
+                        </div>
+                        <div class="flex justify-between items-center py-4 border-y border-stone-100 mb-6 text-stone-600 text-sm">
+                            <span class="flex items-center"><i class="fas fa-bed mr-2 text-stone-400"></i> 1 BHK</span>
+                            <span class="flex items-center"><i class="fas fa-expand mr-2 text-stone-400"></i> 555 sq ft</span>
+                        </div>
+                        <a href="https://wa.me/919867797833" target="_blank" class="flex justify-between items-center text-stone-900 font-bold uppercase text-xs tracking-widest hover:text-brand-red transition-colors group">
+                            Inquire via WhatsApp
+                            <span class="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 flex items-center justify-center group-hover:bg-brand-red group-hover:text-white group-hover:border-brand-red transition-all">
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="About Us" class="py-24 bg-stone-100 border-y border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-sm font-bold tracking-[0.15em] text-stone-500 uppercase mb-4">An advisory built around trust</h2>
+                    <h3 class="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-8">About <span class="text-gradient font-sans italic">Nakshatra Realtors</span></h3>
+                    <div class="space-y-6 text-stone-600 leading-relaxed text-lg">
+                        <p>
+                            <strong class="text-stone-900">Established in 2013</strong>, Nakshatra Realtors is a private advisory representing principals, family offices, and global buyers acquiring extraordinary homes and spaces across India.
+                        </p>
+                        <p>
+                            We work by introduction, building long-term relationships through expert guidance, diligent valuation, and ensuring completely seamless, transparent transactions.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-stone-50 p-8 rounded-[2rem] border border-stone-200 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-stone-100">
+                            <i class="fas fa-gem text-brand-red text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-stone-900 mb-3">Our Mission</h4>
+                        <p class="text-sm text-stone-600">To deliver unparalleled real estate experiences that exceed our discerning clients' expectations.</p>
+                    </div>
+                    
+                    <div class="bg-stone-50 p-8 rounded-[2rem] border border-stone-200 hover-card">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-stone-100">
+                            <i class="fas fa-eye text-brand-orange text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-stone-900 mb-3">Our Vision</h4>
+                        <p class="text-sm text-stone-600">To remain at the forefront of the industry, embracing innovation and absolute discretion in everything we do.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Achievements Section -->
+    <section class="py-16 bg-stone-50 border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Changed from grid-cols-4 to grid-cols-3 so the 3 items fill the space evenly -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:divide-x divide-stone-200">
+                
+                <div class="px-4 mb-8 md:mb-0">
+                    <div class="text-4xl font-serif font-bold text-stone-900 mb-1 counter" data-target="15">0</div>
+                    <div class="text-xs text-stone-500 uppercase tracking-widest font-bold">Years Experience</div>
+                </div>
+                
+                <div class="px-4 mb-8 md:mb-0">
+                    <div class="text-4xl font-serif font-bold text-stone-900 mb-1"><span class="counter" data-target="3118">0</span>+</div>
+                    <div class="text-xs text-stone-500 uppercase tracking-widest font-bold">Satisfied Customers</div>
+                </div>
+                
+                <div class="px-4">
+                    <div class="text-4xl font-serif font-bold text-stone-900 mb-1">95%</div>
+                    <div class="text-xs text-stone-500 uppercase tracking-widest font-bold">Repeated Customers</div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-[0.15em] text-stone-500 uppercase mb-4">End-to-end Solutions</h2>
+                <h3 class="text-4xl md:text-5xl font-serif font-bold text-stone-900">Our <span class="text-gradient font-sans italic">Services</span></h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Services Cards -->
+                <div class="bg-stone-50 p-8 rounded-[2rem] border border-stone-200 hover-card group">
+                    <i class="fas fa-home text-3xl text-brand-red mb-6 transition-transform group-hover:scale-110"></i>
+                    <h4 class="text-xl font-serif font-bold text-stone-900 mb-3">Residential & Commercial</h4>
+                    <p class="text-stone-600 text-sm">Expert assistance in sales and purchases of premium residential homes and prime commercial spaces.</p>
+                </div>
+                
+                <div class="bg-stone-50 p-8 rounded-[2rem] border border-stone-200 hover-card group">
+                    <i class="fas fa-key text-3xl text-brand-orange mb-6 transition-transform group-hover:scale-110"></i>
+                    <h4 class="text-xl font-serif font-bold text-stone-900 mb-3">Rentals & Leasing</h4>
+                    <p class="text-stone-600 text-sm">Seamless property rentals and corporate leasing solutions tailored to your specific requirements.</p>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-[2rem] border border-stone-200 hover-card group">
+                    <i class="fas fa-tools text-3xl text-brand-red mb-6 transition-transform group-hover:scale-110"></i>
+                    <h4 class="text-xl font-serif font-bold text-stone-900 mb-3">Property Management</h4>
+                    <p class="text-stone-600 text-sm">Comprehensive maintenance and management services to ensure your asset retains its value.</p>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-[2rem] border border-stone-200 hover-card group lg:col-start-1 lg:col-end-2">
+                    <i class="fas fa-chart-line text-3xl text-brand-orange mb-6 transition-transform group-hover:scale-110"></i>
+                    <h4 class="text-xl font-serif font-bold text-stone-900 mb-3">Investment Advisory</h4>
+                    <p class="text-stone-600 text-sm">Strategic real estate investment consulting to maximize your returns in dynamic markets.</p>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-[2rem] border border-stone-200 hover-card group lg:col-start-2 lg:col-end-3">
+                    <i class="fas fa-search-dollar text-3xl text-brand-red mb-6 transition-transform group-hover:scale-110"></i>
+                    <h4 class="text-xl font-serif font-bold text-stone-900 mb-3">Valuation & Appraisal</h4>
+                    <p class="text-stone-600 text-sm">Accurate, market-driven property valuations and detailed appraisals for sellers and buyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="bg-stone-900 pt-24 pb-8 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16 border-b border-stone-800 pb-16">
+                
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-xs font-bold tracking-[0.2em] text-stone-400 uppercase mb-4">Begin the Conversation</h2>
+                    <h3 class="text-4xl font-serif font-bold text-white mb-6">Speak with a <span class="text-gradient font-sans italic">Private Advisor</span></h3>
+                    <p class="text-stone-400 mb-10 max-w-md text-lg">
+                        Share a brief. We will respond within one business day with curated opportunities.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <!-- Location Added Google Maps Link -->
+                        <div class="flex items-start space-x-6 group">
+                            <div class="w-12 h-12 rounded-full border border-stone-700 flex items-center justify-center group-hover:border-brand-red transition-colors flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-brand-red text-lg"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-bold tracking-wider text-sm uppercase mb-2">Our Office</h5>
+                                <a href="https://www.google.com/maps/place/NAKSHATRA+REALTORS+%26+REAL+ESTATE+AGENTS+IN+DOMBIVLI/@19.2144125,73.0871328,18z/data=!3m1!4b1!4m6!3m5!1s0x3be7958a00da8629:0xb7ec8da19444b78b!8m2!3d19.2144107!4d73.0880432!16s%2Fg%2F11fxcc272r?entry=ttu&g_ep=EgoyMDI2MDkyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-stone-400 hover:text-white transition-colors block leading-relaxed">
+                                    A-13, J.M. Darshan, Shiv Mandir Road, Ramnagar,<br> Dombivli (East) - 421 201 
+                            </div>
+                        </div>
+                        
+                        <!-- Phone / WhatsApp -->
+                        <div class="flex items-start space-x-6 group">
+                            <div class="w-12 h-12 rounded-full border border-stone-700 flex items-center justify-center group-hover:border-brand-orange transition-colors flex-shrink-0">
+                                <i class="fab fa-whatsapp text-brand-orange text-lg"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-bold tracking-wider text-sm uppercase mb-2">Contact Number</h5>
+                                <div class="flex flex-col space-y-1">
+                                    <a href="https://wa.me/919867797833" target="_blank" class="text-stone-400 hover:text-white transition-colors">+91 98677 97833</a>
+                                    <a href="https://wa.me/918080897833" target="_blank" class="text-stone-400 hover:text-white transition-colors">+91 80808 97833</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Card -->
+                <div class="bg-stone-800/50 p-10 rounded-[2rem] border border-stone-700 flex flex-col justify-center">
+                    <h4 class="text-xl font-serif font-bold text-white mb-4">By Introduction.</h4>
+                    <p class="text-stone-400 mb-8 leading-relaxed">
+                        All enquiries are handled in confidence. We do not share buyer briefs with vendors or counterparties. Connect with us instantly on WhatsApp.
+                    </p>
+                    <a href="https://wa.me/919867797833" target="_blank" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-brand text-white rounded-full font-bold uppercase tracking-wider text-sm hover:shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all w-full sm:w-max">
+                        <i class="fab fa-whatsapp text-xl mr-3"></i> Send Enquiry
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Bottom w/ Credits -->
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 text-sm text-stone-500 font-medium">
+                <div>
+                    &copy; <script>document.write(new Date().getFullYear())</script> NAKSHATRA REALTORS. ALL RIGHTS RESERVED.
+                </div>
+                
+                <!-- Developer Credit -->
+                <div class="flex flex-col md:flex-row items-center md:space-x-2 text-center">
+                    <span class="text-stone-400">Designed by <span class="text-white font-bold">Bhavya Gor</span></span>
+                    <span class="hidden md:inline text-stone-700">|</span>
+                    <a href="tel:91+7977141543" class="hover:text-brand-orange transition-colors">91+ 7977141543</a>
+                    <a href="mailto:bhavyagor2008@gmail.com" class="hover:text-brand-orange transition-colors">bhavyagor2008@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Hero Animations
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fadeInUp {
+                0% { opacity: 0; transform: translateY(20px); }
+                100% { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const navLinks = menu.querySelectorAll('a');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-stone-50/90', 'bg-stone-50/95');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-stone-50/95', 'bg-stone-50/90');
+            }
+        });
+
+        // Counters
+        const counters = document.querySelectorAll('.counter');
+        const speed = 50; 
+
+        const startCounting = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            let count = 0;
+            const inc = target / speed;
+
+            const updateCount = () => {
+                count += inc;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count);
+                    setTimeout(updateCount, 40);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        };
+
+        const observerOptions = {
+            root: null,
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounting(entry.target);
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+    </script>
+</body>
+</html>""
